@@ -1,7 +1,6 @@
 # project specific files
 SRC =	matrix.c \
-	led.c \
-	led_controller.c
+	led.c
 
 ## chip/board settings
 # - the next two should match the directories in
@@ -65,10 +64,14 @@ COMMAND_ENABLE = no    # Commands for debug and configuration
 SLEEP_LED_ENABLE = no  # Breathing sleep LED during USB suspend
 NKRO_ENABLE = yes	    # USB Nkey Rollover
 CUSTOM_MATRIX = yes # Custom matrix file
+LAYOUTS = 60_ansi_split_bs_rshift
+
+# Instead of these you can use LED_CONTROLLER_ENABLE in your keymap
+# It has slightly more features at the moment, but the visualizer is
+# standardized and will support more features in the future
+VISUALIZER_ENABLE = yes
 BACKLIGHT_ENABLE = yes
-#VISUALIZER_ENABLE = yes
 
 LED_DRIVER = is31fl3731c
 LED_WIDTH = 15
 LED_HEIGHT = 5
-LAYOUTS = 60_ansi_split_bs_rshift

@@ -1,5 +1,5 @@
 /*
-Copyright 2017 Fred Sundvik <fsundvik@gmail.com>
+Copyright 2016 Fred Sundvik <fsundvik@gmail.com>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -22,8 +22,21 @@ static const I2CConfig i2ccfg = {
   400000 // clock speed (Hz); 400kHz max for IS31
 };
 
-/* 
-  - digits mean "row" and "col", i.e. 45 means C4-5 in the IS31 datasheet, matrix A
+static const uint8_t led_mask[] = {
+	0xFF, 0x00, /* C1-1 -> C1-16 */
+	0xFF, 0x00, /* C2-1 -> C2-16 */
+	0xFF, 0x00, /* C3-1 -> C3-16 */
+	0xFF, 0x00, /* C4-1 -> C4-16 */
+	0xFF, 0x00, /* C5-1 -> C5-16 */
+	0xFF, 0x00, /* C6-1 -> C6-16 */
+	0xFF, 0x00, /* C7-1 -> C7-16 */
+	0x7F, 0x00, /* C8-1 -> C8-16 */
+	0x00, 0x00, /* C9-1 -> C9-16 */
+};
+
+/* Infinity60 LED MAP
+    - digits mean "row" and "col", i.e. 45 means C4-5 in the IS31 datasheet, matrix A
+
   11 12 13 14 15 16 17 18 21 22 23 24 25  26 27*
    28 31 32 33 34 35 36 37 38 41 42 43 44 45
    46 47 48 51 52 53 54 55 56 57 58 61    62
@@ -38,19 +51,6 @@ Empty slots don't do anything
 0   2 3 4 5 6 7 8 9 A B   D E
 0   2 3       7     A B C   E
 */
-
-static const uint8_t led_mask[] = {
-	0xFF, 0x00, /* C1-1 -> C1-16 */
-	0xFF, 0x00, /* C2-1 -> C2-16 */
-	0xFF, 0x00, /* C3-1 -> C3-16 */
-	0xFF, 0x00, /* C4-1 -> C4-16 */
-	0xFF, 0x00, /* C5-1 -> C5-16 */
-	0xFF, 0x00, /* C6-1 -> C6-16 */
-	0xFF, 0x00, /* C7-1 -> C7-16 */
-	0x7F, 0x00, /* C8-1 -> C8-16 */
-	0x00, 0x00, /* C9-1 -> C9-16 */
-};
-
 
 // The address of the LED
 #define LA(c, r) (c + r * 16 )
@@ -115,4 +115,3 @@ static GFXINLINE void write_data(GDisplay *g, uint8_t* data, uint16_t length) {
 }
 
 #endif /* _GDISP_LLD_BOARD_H */
-
