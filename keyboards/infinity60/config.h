@@ -34,6 +34,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_ROWS 9
 #define MATRIX_COLS 7
 
+/* number of backlight levels */
+#define BACKLIGHT_LEVELS 5
+
+#define LED_BRIGHTNESS_LO       70
+#define LED_BRIGHTNESS_HI       255
+
 /* define if matrix has ghost */
 //#define MATRIX_HAS_GHOST
 
