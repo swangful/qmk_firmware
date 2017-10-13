@@ -70,7 +70,7 @@ LAYOUTS = 60_ansi_split_bs_rshift
 # It has slightly more features at the moment, but the visualizer is
 # standardized and will support more features in the future
 VISUALIZER_ENABLE = yes
-BACKLIGHT_ENABLE = yes
+LED_CONTROLLER_ENABLE = no
 
 LED_DRIVER = is31fl3731c
 LED_WIDTH = 15
