@@ -24,7 +24,7 @@
 
 /* I/O pins */
 #ifndef F0
-    #define PINDEF(port, pin) (uint8_t)((((uint16_t)&PORT##port) << 4) + PIN##port##pin)
+    #define PINDEF(port, pin) (uint8_t)((((uint16_t)&PIN##port) << 4) + PIN##port##pin)
     #define A0 PINDEF(A, 0)
     #define A1 PINDEF(A, 1)
     #define A2 PINDEF(A, 1)
