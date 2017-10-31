@@ -275,11 +275,6 @@ uint8_t matrix_key_count(void)
 #define DDR(p) (*((volatile uint8_t*)(p >> 4) + 1))
 #define PORT(p) (*((volatile uint8_t*)(p >> 4) + 2))
 
-_Static_assert(1==2, "wat");
-_Static_assert(PIN(F0)==PINC, "Pin does not match");
-_Static_assert(PIN(D0)==PIND, "Pin does not match");
-_Static_assert(PIN(E0)==PINE, "Pin does not match");
-
 #if (DIODE_DIRECTION == COL2ROW)
 
 static void init_cols(void)
