@@ -1,10 +1,16 @@
 Swang's Keymap
 ===
+ 
+Layer 1: Identical to TADA68
 
-Layer 1, BASE
-Identical to TADA68
+Layer 2: RGB/Media
 
-Layer 2, RGB/Media
-] = Mute
-[ = Vol Up
-p = Vol Down
+Layer 3: Mashing
+
+Keymap Maintainer: [Steve Wang](https://github.com/swangful)
+
+Difference from default layout: Added rgb/media/mashing layer
+
+Intended usage: Daily driver
+
+I found the easiest way to install is using QMK Toolbox to flash. 
